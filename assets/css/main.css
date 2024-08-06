@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+    background-color: #EEEAE8;
+    font-family: 'Darker Grotesque';
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 27.12px;
+}
+
+@layer components {
+    .max-container {
+        max-width: 1440px;
+        margin: 0 auto;
+    } 
+
+}
