@@ -1,0 +1,51 @@
+name: Automated Release Deployement
+
+on:
+  push:
+    branches:
+      - main
+      - feature/deploy
+
+env:
+  NODE_VERSION: 18.19.0
+
+
+
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build the application
+        run: npm run build
+
+      - name: Deploy to server
+        env:
+          SERVER_IP_ADDRESS: ${{ secrets.SERVER_IP_ADDRESS }}
+          SERVER_USERNAME: ${{ secrets.SERVER_USERNAME }}
+          SERVER_PASSWORD: ${{ secrets.SERVER_PASSWORD }}
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y sshpass
+          sshpass -p "$SERVER_PASSWORD" scp -r .output/* $SERVER_USERNAME@$SERVER_IP_ADDRESS:/path/to/deploy
+
+      - name: Notify on success
+        if: success()
+        run: echo "Deployment successful!"
+
+      - name: Notify on failure
+        if: failure()
+        run: echo "Deployment failed!"
