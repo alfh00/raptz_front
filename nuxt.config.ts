@@ -2,7 +2,7 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   devtools: { enabled: true },
-  modules: ['@nuxt/icon'],
+  modules: ["@nuxt/icon"],
 
   alias: {
     assets: "/<rootDir>/assets"
