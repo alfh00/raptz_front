@@ -40,7 +40,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y sshpass
-          sshpass -p "$SERVER_PASSWORD" scp -r .output/* $SERVER_USERNAME@$SERVER_IP_ADDRESS:/var/www/artifacts/raptz_front
+          sshpass -p "$SERVER_PASSWORD" scp -o StrictHostKeyChecking=no -r .output/* $SERVER_USERNAME@$SERVER_IP_ADDRESS:/var/www/artifacts/raptz_front
 
       - name: Notify on success
         if: success()
