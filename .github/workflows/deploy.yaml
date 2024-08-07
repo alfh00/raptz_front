@@ -23,7 +23,7 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version: '18.19.0'
           cache: 'npm'
 
       - name: Install dependencies
@@ -40,7 +40,7 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y sshpass
-          sshpass -p "$SERVER_PASSWORD" scp -r .output/* $SERVER_USERNAME@$SERVER_IP_ADDRESS:/path/to/deploy
+          sshpass -p "$SERVER_PASSWORD" scp -r .output/* $SERVER_USERNAME@$SERVER_IP_ADDRESS:/var/www/artifacts/raptz_front
 
       - name: Notify on success
         if: success()
