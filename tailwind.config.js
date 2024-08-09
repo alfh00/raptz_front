@@ -11,7 +11,8 @@ export default {
   theme: {
     extend: {
       boxShadow: {
-        'bxsh': '3px 3px 0px 0px #222222'
+        'bxsh': '3px 3px 0px 0px #222222',
+        'bxshw': '6px 6px 0px 0px #EEEAE8'
       },
       colors:{
         'border-color': '#444444',

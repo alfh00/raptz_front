@@ -5,10 +5,10 @@
 
 <template>
     <section>
-        <header class="my-12 mx-12 flex justify-between items-center gap-12">
+        <header class="mx-12 flex justify-between items-center gap-4">
             <NavBar/>
             <RadioPlayer/>
-            <Search/>
+            <SearchBar/>
         
         </header>
     </section>

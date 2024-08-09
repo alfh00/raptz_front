@@ -29,11 +29,16 @@ onMounted(() => {
     audioPlayer.value.play()
   }
 })
+
+const {data: currentProgram, refresh} = await useFetch('https://www.raptz.com/api/planning/now',
+    { pick: ['artist', 'title'] } 
+)
+
 </script>
 
 <template>
-  <div class="player h-16 w-60 border-2 rounded-lg border-border-color shadow-bxsh">
-    <div class="h-full px-3 rounded-lg flex justify-between items-center">
+  <div class="absolute bottom-2 right-2 player h-16 min-w-60 border-2 rounded-lg border-border-color shadow-bxsh z-50">
+    <div class="h-full px-3 rounded-lg flex gap-2 items-center">
       <div>
         <audio ref="audioPlayer" :src="audioSrc" id="lecteur" preload="auto"></audio>
         <div @click="togglePlayPause" class="cursor-pointer bg-bg-orange rounded-lg border-2 p-1 border-border-color shadow-bxsh">
@@ -44,9 +49,15 @@ onMounted(() => {
         </div>
       </div>
 
-      <div class="flex flex-col">
-        <span>artist</span>
-        <span>title</span>
+      <div class="flex flex-col overflow-hidden">
+
+        <span class="text-xl text-nowrap">{{currentProgram.artist}}</span>
+        <div class="flex flex-row items-center gap-2">
+            <span class="bg-bg-orange h-4 rounded-md px-1 text-xs text-nowrap text-white" >
+                ON AIR
+            </span>
+            <span class="font-thin text-nowrap"> {{currentProgram.title}}</span>
+        </div>
       </div>
     </div>
   </div>
