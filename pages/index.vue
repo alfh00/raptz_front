@@ -5,6 +5,7 @@
 <template>
     <div>
         <Hero/>
+        <FeaturedShow/>
         
         
     </div>

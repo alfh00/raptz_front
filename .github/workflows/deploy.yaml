@@ -41,6 +41,7 @@ jobs:
           sudo apt-get update
           sudo apt-get install -y sshpass
           sshpass -p "$SERVER_PASSWORD" scp -o StrictHostKeyChecking=no -r .output/* $SERVER_USERNAME@$SERVER_IP_ADDRESS:/var/www/artifacts/raptz_front
+          sshpass -p "$SERVER_PASSWORD" ssh -o StrictHostKeyChecking=no $SERVER_USERNAME@$SERVER_IP_ADDRESS 'cd /var/www/artifacts/raptz_front/server && npm install && sudo systemctl restart raptzfront'
 
       - name: Notify on success
         if: success()
