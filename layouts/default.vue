@@ -23,9 +23,7 @@ useHead({
             <slot/>
         </div>
 
-        <footer>
-            <h1>Footer</h1>
-        </footer>
+        <Footer/>
     </div>
 </template>
 

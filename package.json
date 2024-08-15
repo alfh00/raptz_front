@@ -17,6 +17,7 @@
   "devDependencies": {
     "@iconify-json/ic": "^1.1.18",
     "@iconify-json/mage": "^1.1.1",
+    "@iconify-json/ph": "^1.1.14",
     "@iconify-json/solar": "^1.1.10",
     "autoprefixer": "^10.4.20",
     "postcss": "^8.4.40",

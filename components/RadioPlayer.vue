@@ -37,7 +37,7 @@ const {data: currentProgram, refresh} = await useFetch('https://www.raptz.com/ap
 </script>
 
 <template>
-  <div class="absolute bottom-2 right-2 player h-16 min-w-60 border-2 rounded-lg border-border-color shadow-bxsh z-50">
+  <div class="fixed bottom-2 right-2 player h-16 min-w-60 border-2 rounded-lg border-border-color shadow-bxsh z-50">
     <div class="h-full px-3 rounded-lg flex gap-2 items-center">
       <div>
         <audio ref="audioPlayer" :src="audioSrc" id="lecteur" preload="auto"></audio>

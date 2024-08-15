@@ -1,11 +1,16 @@
 <script setup lang="ts">
+import { useHomePageData } from '~/composables/useHomePageData'
 
+const { data, pending, error } = useHomePageData()
 </script>
 
 <template>
     <div>
-        <Hero/>
-        <FeaturedShow/>
+      
+        <IndexHero/>
+        <IndexFeaturedShow :show="data.show"/>
+        <IndexFeaturedPodcasts :articles="data.articles"/>
+        
         
         
     </div>

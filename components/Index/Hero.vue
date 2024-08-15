@@ -5,7 +5,7 @@ const buttonLabel = 'Learn More'
 </script>
 
 <template>
-    <section class="h-[34rem] mx-12 my-12 flex flex-row">
+    <section class="h-[34rem] mx-8 my-12 flex flex-row">
         <div class="relative basis-3/5 hidden xl:block py-36 border-4 border-border-color rounded-lg">
             <div class="ml-12 mr-36">
                 <h1 class="text-7xl bg-transparent">This is a Sample Header</h1>
