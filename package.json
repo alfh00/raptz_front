@@ -16,7 +16,9 @@
   },
   "devDependencies": {
     "@iconify-json/ic": "^1.1.18",
+    "@iconify-json/line-md": "^1.1.39",
     "@iconify-json/mage": "^1.1.1",
+    "@iconify-json/ooui": "^1.1.36",
     "@iconify-json/ph": "^1.1.14",
     "@iconify-json/solar": "^1.1.10",
     "autoprefixer": "^10.4.20",

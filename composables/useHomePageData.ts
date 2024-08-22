@@ -1,10 +1,24 @@
+// https://www.raptz.com/api/podcasts/latest/
+// https://www.raptz.com/api/home/
+// https://www.raptz.com/api/styles/home
+// https://www.raptz.com/api/roadshows/upcoming/
+// https://www.raptz.com/api/home/partenaires
 
-export const useHomePageData = () => {
-  return useAsyncData('homePageData', async () => {
-    const response = await fetch('https://www.raptz.com/api/home/')
-    const data = await response.json()
-    const show = data.results[0].show
-    const articles = [data.results[0].article_secondaire, data.results[0].article_tertiaire]
-    return { show, articles }
-  })
+
+export const useHomePageData = async () => {
+  const [
+    { data: podcasts },
+    { data: home },
+    { data: styles },
+    { data: roadshows },
+    { data: partners }
+  ] = await Promise.all([
+    useAsyncData('podcasts', () => $fetch('https://www.raptz.com/api/podcasts/latest/')),
+    useAsyncData('home', () => $fetch('https://www.raptz.com/api/home/')),
+    useAsyncData('styles', () => $fetch('https://www.raptz.com/api/styles/home')),
+    useAsyncData('roadshows', () => $fetch('https://www.raptz.com/api/roadshows/upcoming/')),
+    useAsyncData('partners', () => $fetch('https://www.raptz.com/api/home/partenaires'))
+  ])
+
+  return { podcasts, home, styles, roadshows, partners }
 }

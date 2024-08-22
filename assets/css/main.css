@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Chau+Philomene+One:ital@0;1&family=Darker+Grotesque:wght@300..900&display=swap');
+
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,11 +10,16 @@
     padding: 0;
     box-sizing: border-box;
     scroll-behavior: smooth;
-    background-color: #EEEAE8;
-    font-family: 'Darker Grotesque';
+    background-color: #3A4D6C;
+    color: azure;
+    font-family: 'Chau Philomene One', 'sans-serif';
     font-size: 20px;
-    font-weight: 700;
+    /* font-weight: 700; */
     line-height: 27.12px;
+}
+
+div, h1, h2, h3, h4, h5, h6, span, p {
+    background-color: transparent;
 }
 
 @layer components {

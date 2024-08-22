@@ -1,28 +1,32 @@
 <script setup lang="ts">
-const buttonLabel = 'Click Me'
-
 defineProps({
-  show: Object
+  roadshow: Object
 })
 </script>
 
 <template>
-    <section class="h-screen xl:h-auto flex flex-col mx-8 xl:flex-row xl:mx-24 xl:my-24 gap-12 items-center ">
-        <div class="relative border-4 max-w-96 border-border-color rounded-xl shadow-bxsh ">
-          <div class="rounded-md overflow-hidden">
-            <img class="object-cover" :src="show.vignette" alt="Emission">
-          </div>
-            <img class="absolute bg-transparent top-20 right-[-1.5rem] " src="@/assets/img/play_icon.png" alt="écouter émission">
-        </div>
-        <div class="mx-4">
-            <h2 class="text-5xl">{{ show.titre }}</h2>
-            <div v-html="show.description" class="mt-8 text-lg"></div>
-            <common-button class="mt-8" :label="buttonLabel"></common-button>
-        </div>
+    <section class="flex flex-col xl:flex-row justify-between items-center mx-8 p-12 bg-bg-light rounded-xl">
 
-        
+      <div class="">
+        <h2 class="hidden text-5xl text-darken ">Emissions</h2>
+        <div class="w-[22rem] mb-12 ">  
+          <img class="bg-transparent" src="@/assets/img/agenda.png" alt="">
+        </div>
+      </div>
+      <div class="">
+        <div class="felx xl:flex-row flex-row-reverse">
+          <div class="mb-6">
+            <span class="bg-bg-orange text-2xl px-4 py-2 rounded-xl">18</span>
+            <span class="text-2xl p-2 rounded-xl text-darken">SEP</span>
+            <span class="text-2xl p-2 rounded-xl text-darken">2024</span>
+          </div>
+          <span class=" text-2xl p-2 rounded-xl text-darken">à l'adresse suivante</span>
+        </div>
+        <h3 class=" text-darken text-3xl py-6">{{ roadshow?.results[0].nom }}</h3>
+        <CommonButtonSmall class="ml-auto my-2" icon="basil:arrow-right-outline" label="En Savoir Plus"/>
+      </div>
+
     </section>
-    
 </template>
 
 <style scoped>

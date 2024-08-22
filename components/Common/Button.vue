@@ -13,10 +13,10 @@ const props = defineProps({
 
 <template>
     
-    <button class="py-4 px-4 rounded-xl bg-bg-orange text-white text-xl shadow-bxsh flex items-center">
+    <button class="py-4 px-4 rounded-xl bg-bg-light text-xl flex items-center">
     
       <!-- You can use an icon library here, such as FontAwesome or Heroicons -->
-      <Icon v-if="icon" :name="icon" class="bg-white text-3xl"/>
+      <Icon v-if="icon" :name="icon" class="bg-darken text-3xl"/>
     
     {{ label || '' }}
   </button>

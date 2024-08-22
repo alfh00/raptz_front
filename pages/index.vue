@@ -1,17 +1,17 @@
-<script setup lang="ts">
-import { useHomePageData } from '~/composables/useHomePageData'
+<script setup >
 
-const { data, pending, error } = useHomePageData()
+const { podcasts, home, styles, roadshows, partners } = await useHomePageData()
+
 </script>
 
 <template>
     <div>
       
         <IndexHero/>
-        <IndexFeaturedShow :show="data.show"/>
-        <IndexFeaturedPodcasts :articles="data.articles"/>
-        
-        
+        <IndexFeaturedContent />
+        <IndexFeaturedShow :roadshow="roadshows"/>
+        <IndexFeaturedPodcasts :podcasts="podcasts" :styles="styles"/>
+        <IndexPartners :partners="partners"/>
         
     </div>
     
